@@ -9,3 +9,7 @@ Start a verification note with the Git revision from `git rev-parse --short HEAD
 ## Confirm the entry point responds
 
 Request `/` on the running loopback server and confirm HTTP 200 and a `Content-Type` containing `text/html`. Read the response body and look for `<title>Nimbus Salvagers</title>` and `<div id="root"></div>`. The title and mount point confirm that the server returned the expected page before any browser code ran. Keep the server console available so a failed request can be compared with its startup output.
+
+## Check the files that bootstrap the app
+
+Take the stylesheet and module URLs from the HTML that the server actually returned. Request each one and verify its status, body and `Content-Type`. The stylesheet needs `text/css` and each JavaScript module needs a JavaScript MIME type. Include the Three.js module imported by the entry bundle. A successful status alone can hide an HTML fallback, so inspect the header before investigating a blank canvas.
