@@ -41,3 +41,7 @@ Review the intended release diff before it reaches production. Look first at `in
 ## Homepage verification
 
 Request `https://coilshott.vercel.app/` with an HTTP client and look for a successful response containing the `Nimbus Salvagers` title. Repeat the check on the Vercel deployment URL when debugging a domain or alias issue. If the client reports that a local proxy refused the connection, repeat from a network that can reach the domain before diagnosing a Vercel outage.
+
+## Production asset verification
+
+Inspect the document and one request for each asset type in the deployed browser Network panel. JavaScript modules need a JavaScript response, and the stylesheet must arrive as CSS. Check the font and artwork responses for their expected binary types. HTML returned for a bundle URL can report a successful HTTP status and still prevent the module from loading.
