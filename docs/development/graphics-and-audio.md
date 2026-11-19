@@ -77,3 +77,7 @@ The default volume in the shipped bundle is 0.35. `setVolume` updates the master
 ## Locate synthesized transient sounds
 
 The sound engine creates short tones with oscillators and constructs short noise samples in audio buffers. Its noise path creates a low-pass filter and uses a gain envelope. The tracked site contains no separate audio recordings for these sounds. When a single cue is missing, reproduce the event that should generate it and inspect whether it reaches its audio helper before looking for a missing asset.
+
+## Explain the ambient drone
+
+The shipped audio initialization creates four sine oscillators for the ambient drone. The source lists base tones of 55, 82.41, 110, and 164.81 Hz with per-voice gains and detuning. Check ambient audio after a user gesture and compare it with a short interface cue at the same master volume. Hearing the cue while the drone is quiet can help isolate the problem to the ambient voices.
