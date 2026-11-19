@@ -45,3 +45,7 @@ The client displays the heading `A MOMENT BETWEEN WORLDS.` when its 3D initializ
 ## Explain how graphics quality affects rendering
 
 The Graphics quality setting changes the renderer's pixel-ratio cap and shadow behavior. The bundled renderer caps high quality at 1.5 and uses a cap of 1 for other settings, with a separate 0.65 cap on detected software rendering. Low quality and detected software rendering use the direct render path. Compare presets at the same viewport and browser zoom to keep pixel count from obscuring the change you are measuring.
+
+## Trace canvas resizing and camera projection
+
+The client uses a `ResizeObserver` and reads the canvas element's client width and height. Its resize handler updates the renderer, postprocessing composer, and camera aspect, then refreshes the projection matrix. For a stretched or clipped scene, inspect both the element rectangle and its drawing-buffer dimensions after a resize. Record whether the menu chrome, the 3D scene, or both change when the viewport is resized.
