@@ -69,3 +69,7 @@ During play, `P` or Escape requests a pause. The pause panel says The Lift Can W
 ## Browser state inspection getters
 
 Read `window.__NIMBUS_STATE__` in the console to see engine telemetry such as position, phase, health, ammo, subclass, and weapon. `window.__REVISION_STATE__` returns a JSON copy of the HUD state held by React. Read each property again when checking a transition. The getter returns a snapshot, so retaining the previous object is useful for comparing values across a UI action.
+
+## Browser profile storage scope
+
+The player profile lives in local storage under `nimbus-engineer-v1`. In Chromium DevTools, open Application, then Local Storage, and select the origin running the game. The record stores the subclass, weapon, unlocks, career counters, and settings. Different hosts or ports have independent browser storage. When investigating missing progress, confirm the current origin and browser profile before comparing the stored record.
