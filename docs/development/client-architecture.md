@@ -73,3 +73,7 @@ Read `window.__NIMBUS_STATE__` in the console to see engine telemetry such as po
 ## Browser profile storage scope
 
 The player profile lives in local storage under `nimbus-engineer-v1`. In Chromium DevTools, open Application, then Local Storage, and select the origin running the game. The record stores the subclass, weapon, unlocks, career counters, and settings. Different hosts or ports have independent browser storage. When investigating missing progress, confirm the current origin and browser profile before comparing the stored record.
+
+## Profile parsing and recovery
+
+On load, the bundle parses the saved profile and falls back to its defaults if reading or parsing throws. It validates subclass and weapon choices, bounds numeric values, and preserves the starter unlocks when merging stored items. Use a disposable browser profile to observe initialization from a fresh store. Its initial values include the Rigger subclass, Coil Nine loadout, and the Coil Nine and Pathfinder Set discoveries.
