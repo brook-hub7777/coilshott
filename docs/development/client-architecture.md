@@ -25,3 +25,7 @@ In DevTools Accessibility, find the landmark named Main navigation and inspect t
 ## Shared mission selection
 
 Play activity cards and Destinations rows update the same mission selection. Choose Through the Squall in Play, check the tracked mission title, then open Destinations and find the selected Vanguard row. The three mission IDs are `story`, `strike`, and `windtrials`, with `story` selected when the application loads. The Destinations launch button incorporates the selected activity label, so its text updates with the selection.
+
+## Mission briefing data
+
+On Play, select a mission and open View Mission Details. The briefing reads the selected mission definition to show the title, synopsis, location, duration, team, and objective. It also looks up a collection item by the mission reward ID to display the reward name. When tracing a briefing whose objective or reward looks wrong, compare the mission and collection records before investigating the dialog layout.
