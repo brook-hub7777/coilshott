@@ -29,3 +29,7 @@ The entrypoint currently names `assets/index-CFnmQ0aO.js` and `assets/index-Cunq
 ## Preview revision selection
 
 When the Vercel Git integration is active, a branch update can produce a preview. Open the preview’s deployment details and compare the revision to the Git commit being reviewed. Use that specific preview for browser checks. The production domain can continue serving a different revision during review, so include the preview URL and its commit when reporting a release issue.
+
+## Production branch selection
+
+Confirm the configured production branch in the Vercel project before treating a push as a release. The GitHub repository uses `main` as its primary branch. Deployment settings determine which revision reaches the production domain. After an update, open the Vercel deployment list and record the production revision, the deployment status, and the domain that points to it.
