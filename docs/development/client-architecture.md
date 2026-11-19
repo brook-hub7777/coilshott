@@ -61,3 +61,7 @@ The root component renders a status called Checking Weather until the engine sig
 ## Runtime phases and result screens
 
 The engine begins in `menu` and moves through `playing` or `paused` during a mission. It reports `won` or `lost` on completion. React also receives a separate mission result object. That object supplies the summary and causes the result overlay to replace the HUD. When investigating the end of a mission, inspect the phase and visible result together to locate which part of the transition has occurred.
+
+## Pause and return to the lobby
+
+During play, `P` or Escape requests a pause. The pause panel says The Lift Can Wait and offers Resume Mission and Return to the Yard. The engine also pauses active play when the document becomes hidden or pointer lock is lost after capture. Record whether the window was focused and whether pointer lock was active when diagnosing an unexpected pause.
