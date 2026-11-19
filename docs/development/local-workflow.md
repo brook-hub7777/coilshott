@@ -53,3 +53,7 @@ The checkout ships browser-ready HTML, JavaScript, CSS, fonts, and artwork. It i
 ## Choose a browser that supports the game
 
 Nimbus Salvagers renders a three-dimensional scene in the browser and expects WebGL 2 support. Audio uses the browser’s Web Audio API, while mouse input during play can request pointer lock. Start in a current browser with WebGL available. If the app reports a graphics initialization failure, check browser acceleration and WebGL support before changing the static server. A successful HTML response only confirms that the browser reached the server.
+
+## Start Nimbus Salvagers locally
+
+From the repository root, run `node coilshot/server.js`. Keep that terminal open while the foreground server runs. Use the local address printed by the server, which defaults to `http://localhost:3000/`. Start with the root pathname and look for the Nimbus Salvagers lobby. Using the HTTP server gives the root-relative asset URLs and JavaScript module imports an origin from which to resolve.
