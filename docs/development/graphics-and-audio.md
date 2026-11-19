@@ -13,3 +13,7 @@ The lobby combines browser-rendered controls, CSS backdrops, and a game canvas. 
 ## Record the shipped sky backdrop
 
 The stylesheet references `art/sky-yard.png` from multiple backgrounds, including the mission briefing. The tracked PNG is 1536 × 1024 and 2,733,562 bytes. The archived inventory lists a different resolution, so use a file inspector on the actual PNG when measuring changes. Compare the computed `background-size` and `background-position` across the lobby and briefing before filing an image-crop issue.
+
+## Map the bundled interface font weights
+
+The stylesheet maps `fonts/font-0.ttf` through `fonts/font-3.ttf` to Barlow Condensed weights 400–700. It maps `fonts/font-4.ttf` through `fonts/font-8.ttf` to Manrope weights 400–800. Each rule uses `font-display: swap`. When the width of a label changes during page load, compare its computed weight, the rendered font, and the corresponding font request. Wait for `document.fonts.ready` before capturing a settled screenshot.
