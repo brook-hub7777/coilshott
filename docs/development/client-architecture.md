@@ -45,3 +45,7 @@ The Collections view marks items discovered when their IDs appear in the profile
 ## Dialog lifecycle and focus
 
 Settings, Field Guide, Mission Briefing, and collection details share the native `dialog` component. The bundle calls `showModal()` when it opens and records the previously focused element. Closing the component calls `close()` and attempts to restore that focus. Open Settings with the keyboard, dismiss it with Escape, and check that focus returns to the settings button. The visible Close dialog button uses the same dismissal callback.
+
+## Field Guide entry points
+
+The lobby footer offers a Controls button. The question mark shortcut also opens the Field Guide while the engine is in the menu phase with no modal open. During a paused mission, use the Controls & Field Guide button on the pause panel. All of these paths lead to the same Know Your Lift dialog, which includes keyboard bindings and fallback instructions for mouse capture and touch.
