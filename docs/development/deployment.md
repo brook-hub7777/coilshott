@@ -45,3 +45,7 @@ Request `https://coilshott.vercel.app/` with an HTTP client and look for a succe
 ## Production asset verification
 
 Inspect the document and one request for each asset type in the deployed browser Network panel. JavaScript modules need a JavaScript response, and the stylesheet must arrive as CSS. Check the font and artwork responses for their expected binary types. HTML returned for a bundle URL can report a successful HTTP status and still prevent the module from loading.
+
+## Homepage 404 triage
+
+For a production homepage 404, start with the URL and the deployment status in Vercel. Confirm which revision and Root Directory the deployment used. Inspect that revision for the deployed `index.html` and confirm the production alias points to it. Capture the first failing response before changing the rewrite or publishing another revision, since the original response helps distinguish the source of the failure.
