@@ -37,3 +37,7 @@ The application bundle `assets/index-CFnmQ0aO.js` imports `./three-CoWDQTm9.js` 
 ## Find the files that supply the page appearance
 
 The stylesheet resolves image and font URLs relative to its own path. For example, `../art/sky-yard.png` resolves to `/art/sky-yard.png` when the stylesheet is served from `/assets/`. The HTML also declares the display font directly and loads `/favicon.svg`. These files are part of the committed static payload. If the shell appears with an unexpected typeface or background, use the browser Network panel to check the resolved resource URLs.
+
+## Check which local copies match
+
+The baseline root and archived web payloads have matching content for counterpart files, and all three checked-in `index.html` files are identical. Run `cmp index.html coilshot/analysis/reference-assets/index.html` to verify the entry pages and use `cmp` on a specific bundle when tracking a change. Identical bytes describe the baseline only. The two trees are separate paths, so a later edit to one tree can change which content a serving workflow picks up.
