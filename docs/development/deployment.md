@@ -73,3 +73,7 @@ Record the last known good Vercel deployment and its Git commit while preparing 
 ## Release verification record
 
 A release note should record the Git revision, the preview or production URL checked, whether the homepage and assets loaded, and the browser behavior observed. Include the browser and whether WebGL used hardware or software rendering when reporting a startup issue. Keep local smoke checks and deployed checks separate so another person can reproduce the exact request or browser flow.
+
+## Preserve the reference snapshot
+
+The top-level static files are the existing Vercel payload. The files under `coilshot/analysis/reference-assets` also serve as a reference snapshot and are preferred by the included local Node server. Before updating either tree, inspect the diff for unintended changes in the other. For a deployment-only asset change, check the top-level files directly and call out any resulting difference in what the bundled local server shows.
