@@ -37,3 +37,7 @@ The Engineer view offers Rigger, Aerostat, and Mistwright. The selected subclass
 ## Weapon names and IDs
 
 The loadout presents Coil Nine, Rainbell, and Longdraft as names players can recognize. Their internal weapon IDs are `auto`, `handcannon`, and `scout`. Engineer writes the selected weapon ID to the player profile and applies it to the engine. The Collections schematics use their own IDs such as `coil-nine`. When comparing loadout and collection data, use this mapping to relate the two sets of identifiers.
+
+## Collections discovery
+
+The Collections view marks items discovered when their IDs appear in the profile’s `unlocked` list. Both discovered and undiscovered cards open details. In a fresh profile, open Coil Nine and Rainbell to compare the status text. The details offer Equip Weapon for discovered weapons and give the discovery condition for locked items. The archive’s screenshots can help locate the cards during this comparison.
