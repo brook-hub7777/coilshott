@@ -4,6 +4,8 @@
 
 [Play Nimbus Salvagers on Vercel](https://coilshott.vercel.app/)
 
+[Development walkthrough](docs/development/README.md)
+
 ---
 
 ## ⚡ Overview
