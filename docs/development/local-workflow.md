@@ -21,3 +21,7 @@ The root web payload starts at `index.html`. The three tracked files under `asse
 ## Find the analysis archive
 
 Open `coilshot/analysis/README.md` for the technical report and its index. Its neighboring inventory files describe the observed application, and `coilshot/analysis/screenshots/` stores the recorded visual evidence. The separate `coilshot/analysis/reference-assets/` tree contains a runnable HTML and asset snapshot. Use that distinction when tracing a file. A screenshot records one observed state, while a matching HTML or bundle path identifies executable content that the local helper can serve.
+
+## Recognize the proposed reconstruction roadmap
+
+The analysis folder includes `implementation-plan.md`, which proposes a source scaffold, build tools, and reconstruction milestones. Read those sections as design proposals and check the tracked files before using any proposed command or path. The available local launcher is `coilshot/server.js`. The root app already contains checked-in browser output. Use `git ls-files` to verify whether a proposed source file, manifest, or configuration actually exists in the checkout.
