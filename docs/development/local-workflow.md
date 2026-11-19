@@ -61,3 +61,7 @@ From the repository root, run `node coilshot/server.js`. Keep that terminal open
 ## Select an available port
 
 The server reads `PORT` and uses `3000` by default. When that port is already in use, run `PORT=3001 node coilshot/server.js` from the repository root and use port 3001 for subsequent requests. The helper binds to `0.0.0.0` on the configured port. Choose a valid TCP port. The server parses the environment variable as an integer and leaves listen errors to Node.
+
+## Trace where the helper reads files
+
+The helper constructs its first serving directory from `__dirname` and `analysis/reference-assets`. It checks this location for each requested path, and an absent path sends the lookup to the `coilshot/` directory. The fallback directory is the directory containing `server.js`. The repository root sits one level above both choices. Use the archive copy to trace what the helper serves for the baseline app and the root copy to trace root-served content.
