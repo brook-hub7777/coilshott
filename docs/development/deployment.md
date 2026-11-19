@@ -25,3 +25,7 @@ The deployment entrypoint uses root-relative URLs for the module, stylesheet, fa
 ## Hashed filenames
 
 The entrypoint currently names `assets/index-CFnmQ0aO.js` and `assets/index-Cunqe2o7.css`. The JavaScript loads `three-CoWDQTm9.js` from the same assets directory. If a future source build changes these names, review the generated HTML and the matching bundles in one change. A preview should load the module graph in a fresh browser session to catch stale references while the previous deployment is still available.
+
+## Preview revision selection
+
+When the Vercel Git integration is active, a branch update can produce a preview. Open the preview’s deployment details and compare the revision to the Git commit being reviewed. Use that specific preview for browser checks. The production domain can continue serving a different revision during review, so include the preview URL and its commit when reporting a release issue.
