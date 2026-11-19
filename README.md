@@ -2,6 +2,8 @@
 
 > A high-fidelity, Destiny 2-inspired browser sci-fi action FPS and interactive 3D orbit lobby built with **React 18**, **Three.js (r170+)**, **Tailwind CSS**, and the **Web Audio API**.
 
+[Play Nimbus Salvagers on Vercel](https://coilshott.vercel.app/)
+
 ---
 
 ## ⚡ Overview
