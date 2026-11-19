@@ -37,3 +37,7 @@ The local smoke run used system Chromium with `--use-gl=angle`, `--use-angle=swi
 ## Start each independent run in a clean context
 
 Use a new Playwright browser context for each independent scenario. This isolates saved settings and progression from earlier runs. Record the viewport and the local origin, including its port, in failures. A reload inside one context is useful when checking persistence, while closing the context gives the next scenario a clean player profile. Prefer disposable test state when changing settings or launching missions.
+
+## Check the visible result of graphics startup
+
+Confirm that the WebGL canvas and the lobby heading are visible together. A canvas element can exist before the renderer is working. If `A MOMENT BETWEEN WORLDS.` appears, save the first browser error and note the active Chromium graphics flags. Keep that failure distinct from a missing asset response so the next check targets the browser capability or the resource that actually failed.
