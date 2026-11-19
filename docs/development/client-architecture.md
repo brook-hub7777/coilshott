@@ -57,3 +57,7 @@ Open Settings using the top-bar gear or the Settings button in the pause panel. 
 ## Loading status and error alert
 
 The root component renders a status called Checking Weather until the engine signals readiness. The launch controls are disabled until that signal arrives. The error overlay uses the heading A Moment Between Worlds and exposes an alert with the reported reason. Its Reconnect button reloads the page. If startup appears stalled, use Elements or Accessibility to identify which of those states the browser is showing.
+
+## Runtime phases and result screens
+
+The engine begins in `menu` and moves through `playing` or `paused` during a mission. It reports `won` or `lost` on completion. React also receives a separate mission result object. That object supplies the summary and causes the result overlay to replace the HUD. When investigating the end of a mission, inspect the phase and visible result together to locate which part of the transition has occurred.
