@@ -41,3 +41,7 @@ The loadout presents Coil Nine, Rainbell, and Longdraft as names players can rec
 ## Collections discovery
 
 The Collections view marks items discovered when their IDs appear in the profile’s `unlocked` list. Both discovered and undiscovered cards open details. In a fresh profile, open Coil Nine and Rainbell to compare the status text. The details offer Equip Weapon for discovered weapons and give the discovery condition for locked items. The archive’s screenshots can help locate the cards during this comparison.
+
+## Dialog lifecycle and focus
+
+Settings, Field Guide, Mission Briefing, and collection details share the native `dialog` component. The bundle calls `showModal()` when it opens and records the previously focused element. Closing the component calls `close()` and attempts to restore that focus. Open Settings with the keyboard, dismiss it with Escape, and check that focus returns to the settings button. The visible Close dialog button uses the same dismissal callback.
