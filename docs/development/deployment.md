@@ -77,3 +77,7 @@ A release note should record the Git revision, the preview or production URL che
 ## Preserve the reference snapshot
 
 The top-level static files are the existing Vercel payload. The files under `coilshot/analysis/reference-assets` also serve as a reference snapshot and are preferred by the included local Node server. Before updating either tree, inspect the diff for unintended changes in the other. For a deployment-only asset change, check the top-level files directly and call out any resulting difference in what the bundled local server shows.
+
+## Future source build handoff
+
+If editable source becomes available, document its entrypoint, tool versions, dependency lockfile, and build output directory before changing the Vercel project. First reproduce the build locally and verify that its generated entrypoint and assets deploy together in a preview. Treat the current static deployment as a working reference while reviewing the transition and update launch and release instructions once the new workflow has been verified.
