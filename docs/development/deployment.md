@@ -13,3 +13,7 @@ Check that the Vercel project uses the repository root as its Root Directory. Th
 ## Static build settings
 
 The repository stores the files Vercel needs for a static deployment and contains no package manifest or generated build script to run. Review any existing install, build, or output directory overrides in the Vercel project settings. A custom output directory must contain the deployed `index.html` and its assets. Record the observed settings when debugging, since dashboard overrides are outside the Git diff.
+
+## Routing configuration
+
+The checked-in `vercel.json` contains a rewrite from `/(.*)` to `/index.html`. A rewrite serves content under the requested address. To check its effect, request the homepage, a real JavaScript asset, and a path without a corresponding file in a preview. Record the status and content type for each request. This shows which responses are the app shell and which carry actual assets under the deployed routing rules.
