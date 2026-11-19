@@ -49,3 +49,7 @@ Run `node --version` from the checkout to confirm that Node.js is on your path. 
 ## Use the prebuilt application directly
 
 The checkout ships browser-ready HTML, JavaScript, CSS, fonts, and artwork. It includes no package manifest, package-manager lockfile, or build task. Once Node.js and a browser are available, begin with the checked-in helper. There are no declared packages to install and no compiled output to generate during onboarding. Keep the distinction between bundled dependencies and local tools in mind when you inspect the project or reproduce the launch on another machine.
+
+## Choose a browser that supports the game
+
+Nimbus Salvagers renders a three-dimensional scene in the browser and expects WebGL 2 support. Audio uses the browser’s Web Audio API, while mouse input during play can request pointer lock. Start in a current browser with WebGL available. If the app reports a graphics initialization failure, check browser acceleration and WebGL support before changing the static server. A successful HTML response only confirms that the browser reached the server.
