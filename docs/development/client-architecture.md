@@ -53,3 +53,7 @@ The lobby footer offers a Controls button. The question mark shortcut also opens
 ## Settings controls and persistence
 
 Open Settings using the top-bar gear or the Settings button in the pause panel. Look Sensitivity ranges from 0.25 to 2.50 in 0.05 increments, and Graphics Quality offers High and Performance. Reduce Motion and Invert Vertical Look use checkboxes. Changing a control updates the profile immediately. The Done button closes the panel, so inspect the live state while the dialog is still open if a change appears delayed.
+
+## Loading status and error alert
+
+The root component renders a status called Checking Weather until the engine signals readiness. The launch controls are disabled until that signal arrives. The error overlay uses the heading A Moment Between Worlds and exposes an alert with the reported reason. Its Reconnect button reloads the page. If startup appears stalled, use Elements or Accessibility to identify which of those states the browser is showing.
