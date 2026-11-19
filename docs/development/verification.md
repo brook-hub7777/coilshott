@@ -33,3 +33,7 @@ After navigating to `/`, use a browser assertion that retries until the heading 
 ## Configure a headless WebGL test browser
 
 The local smoke run used system Chromium with `--use-gl=angle`, `--use-angle=swiftshader` and `--enable-unsafe-swiftshader`. Keep those flags scoped to the disposable local test browser used to run this project. Record the Chromium version with the result because the available graphics backend varies with the host. Use a regular hardware-accelerated browser for checks that depend on normal graphics performance.
+
+## Start each independent run in a clean context
+
+Use a new Playwright browser context for each independent scenario. This isolates saved settings and progression from earlier runs. Record the viewport and the local origin, including its port, in failures. A reload inside one context is useful when checking persistence, while closing the context gives the next scenario a clean player profile. Prefer disposable test state when changing settings or launching missions.
