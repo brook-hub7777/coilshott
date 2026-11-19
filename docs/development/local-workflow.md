@@ -65,3 +65,7 @@ The server reads `PORT` and uses `3000` by default. When that port is already in
 ## Trace where the helper reads files
 
 The helper constructs its first serving directory from `__dirname` and `analysis/reference-assets`. It checks this location for each requested path, and an absent path sends the lookup to the `coilshot/` directory. The fallback directory is the directory containing `server.js`. The repository root sits one level above both choices. Use the archive copy to trace what the helper serves for the baseline app and the root copy to trace root-served content.
+
+## Serve the deployment files locally
+
+From the repository root, run `python3 -m http.server --bind 127.0.0.1 --directory . 3001` when you need to check edits to the top-level deployment files. Open `http://127.0.0.1:3001/` and check that the HTML and its assets come from the checkout root. This serves the same entrypoint and assets listed for deployment. Use a Vercel preview to check Vercel-managed routing.
