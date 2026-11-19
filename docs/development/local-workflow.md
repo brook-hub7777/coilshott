@@ -25,3 +25,7 @@ Open `coilshot/analysis/README.md` for the technical report and its index. Its n
 ## Recognize the proposed reconstruction roadmap
 
 The analysis folder includes `implementation-plan.md`, which proposes a source scaffold, build tools, and reconstruction milestones. Read those sections as design proposals and check the tracked files before using any proposed command or path. The available local launcher is `coilshot/server.js`. The root app already contains checked-in browser output. Use `git ls-files` to verify whether a proposed source file, manifest, or configuration actually exists in the checkout.
+
+## Follow startup through the HTML
+
+Open `index.html` to find the page title, icon link, Orbitron face declaration, and root mount element. The stylesheet is `/assets/index-Cunqe2o7.css`. The module element loads `/assets/index-CFnmQ0aO.js` after the document declares `#root`. This short entry document gives you concrete starting points when a browser can reach the server and the expected interface has yet to appear. The nested and archived HTML copies have the same bootstrap at the baseline.
