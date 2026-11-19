@@ -57,3 +57,7 @@ Nimbus Salvagers renders a three-dimensional scene in the browser and expects We
 ## Start Nimbus Salvagers locally
 
 From the repository root, run `node coilshot/server.js`. Keep that terminal open while the foreground server runs. Use the local address printed by the server, which defaults to `http://localhost:3000/`. Start with the root pathname and look for the Nimbus Salvagers lobby. Using the HTTP server gives the root-relative asset URLs and JavaScript module imports an origin from which to resolve.
+
+## Select an available port
+
+The server reads `PORT` and uses `3000` by default. When that port is already in use, run `PORT=3001 node coilshot/server.js` from the repository root and use port 3001 for subsequent requests. The helper binds to `0.0.0.0` on the configured port. Choose a valid TCP port. The server parses the environment variable as an integer and leaves listen errors to Node.
