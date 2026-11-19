@@ -53,3 +53,7 @@ For a production homepage 404, start with the URL and the deployment status in V
 ## Bundle load errors
 
 When the production HTML appears and the lobby fails to render, capture the first red request and the first browser exception. If the request path names a module, compare it with the checked-in files for the deployed commit and inspect its response body and content type. This helps determine whether the deployment omitted an asset, served fallback HTML, or reached code that failed during browser initialization.
+
+## Deployed paths and in-app navigation
+
+Play, Destinations, Engineer, and Collections are views reached through the running lobby. The current browser navigation keeps those views at the same document URL. A rewrite that serves the HTML for an arbitrary path does not create a dedicated link to a particular view. Verify internal navigation by clicking it in the app and test paths separately when changing Vercel routing.
