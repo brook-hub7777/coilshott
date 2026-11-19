@@ -21,3 +21,7 @@ The stylesheet maps `fonts/font-0.ttf` through `fonts/font-3.ttf` to Barlow Cond
 ## Identify both Orbitron declarations
 
 `index.html` declares Orbitron with the absolute URL `/fonts/original/display.ttf`. The shipped stylesheet declares the same variable face through `../fonts/original/display.ttf`, resolved relative to the stylesheet. Both specify weights 100–900. When diagnosing a display-heading font issue, compare the two resolved URLs in the Network panel and inspect the rendered font on the heading. A server mounted at a subpath may resolve those URLs differently.
+
+## Locate the favicon and inline interface icons
+
+The browser tab gets its icon from the standalone `/favicon.svg` referenced in `index.html`. Interface icons and schematics are rendered within page markup. If an icon appears incorrect, identify whether the symptom is in the browser tab or in the interface. For inline SVG, inspect `viewBox`, inherited `color`, and computed fill or stroke. For the tab icon, inspect the asset response and refresh with caching disabled.
