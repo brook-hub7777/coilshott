@@ -25,3 +25,7 @@ The stylesheet maps `fonts/font-0.ttf` through `fonts/font-3.ttf` to Barlow Cond
 ## Locate the favicon and inline interface icons
 
 The browser tab gets its icon from the standalone `/favicon.svg` referenced in `index.html`. Interface icons and schematics are rendered within page markup. If an icon appears incorrect, identify whether the symptom is in the browser tab or in the interface. For inline SVG, inspect `viewBox`, inherited `color`, and computed fill or stroke. For the tab icon, inspect the asset response and refresh with caching disabled.
+
+## Find the active CSS declaration
+
+The design notes under `coilshot/analysis/design-system.md` provide a vocabulary for surfaces, type, and motion. Use the computed style of the running page to establish the actual declaration behind a color or spacing issue. Expand the computed property to find its source rule in `assets/index-Cunqe2o7.css`, then check specificity, media conditions, and inherited custom properties. Record the matching selector in any proposed change.
