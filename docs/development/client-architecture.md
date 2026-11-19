@@ -9,3 +9,7 @@ Start with the repository root `index.html`. It declares the Nimbus Salvagers ti
 ## Tracing a label into the bundle
 
 Open the application module in DevTools Sources and use the pretty-print control before searching for a visible label such as `CHOOSE YOUR PATH.` or `VIEW MISSION DETAILS`. The surrounding generated code shows the element, event handler, and data bindings. The archive under `coilshot/analysis` provides historical context. Verify its selectors, names, and values against the shipped module before using them as references.
+
+## Application state boundaries
+
+The root React component keeps lobby screen, selected mission, active overlay, player profile, and engine HUD in separate state values. The application uses the HUD phase to decide when to show the lobby, and the active overlay controls the dialog content. When diagnosing a UI mismatch, record the visible screen and dialog alongside the engine phase. A screen change and a mission launch update different state.
