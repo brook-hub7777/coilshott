@@ -17,3 +17,7 @@ The stylesheet references `art/sky-yard.png` from multiple backgrounds, includin
 ## Map the bundled interface font weights
 
 The stylesheet maps `fonts/font-0.ttf` through `fonts/font-3.ttf` to Barlow Condensed weights 400–700. It maps `fonts/font-4.ttf` through `fonts/font-8.ttf` to Manrope weights 400–800. Each rule uses `font-display: swap`. When the width of a label changes during page load, compare its computed weight, the rendered font, and the corresponding font request. Wait for `document.fonts.ready` before capturing a settled screenshot.
+
+## Identify both Orbitron declarations
+
+`index.html` declares Orbitron with the absolute URL `/fonts/original/display.ttf`. The shipped stylesheet declares the same variable face through `../fonts/original/display.ttf`, resolved relative to the stylesheet. Both specify weights 100–900. When diagnosing a display-heading font issue, compare the two resolved URLs in the Network panel and inspect the rendered font on the heading. A server mounted at a subpath may resolve those URLs differently.
