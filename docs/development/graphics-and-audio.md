@@ -41,3 +41,7 @@ The stylesheet has a `prefers-reduced-motion` media rule. The in-game Reduce mot
 ## Diagnose WebGL startup failures
 
 The client displays the heading `A MOMENT BETWEEN WORLDS.` when its 3D initialization fails. The recovery button reloads the page. Capture the message and browser console output before retrying. In a separate console evaluation, check whether a fresh canvas can obtain a `webgl2` context. Compare a working browser profile with the failing one and record the browser version and graphics acceleration state.
+
+## Explain how graphics quality affects rendering
+
+The Graphics quality setting changes the renderer's pixel-ratio cap and shadow behavior. The bundled renderer caps high quality at 1.5 and uses a cap of 1 for other settings, with a separate 0.65 cap on detected software rendering. Low quality and detected software rendering use the direct render path. Compare presets at the same viewport and browser zoom to keep pixel count from obscuring the change you are measuring.
