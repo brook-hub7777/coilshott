@@ -77,3 +77,7 @@ The helper maps extensions to content types, including `text/html` for HTML, `te
 ## Manage the foreground server
 
 Stop the foreground server with Ctrl+C in its terminal, then run the start command again to restart it. Repeat the `PORT` assignment if you chose a custom port. Each request opens its asset file from disk, so a file edit can be read on the next request. The server script itself is loaded when Node starts. Restart the process after changing the server code, and reload the page to request the current assets.
+
+## Keep development sessions separate
+
+The browser stores player progress and settings in `localStorage` under `nimbus-engineer-v1`. The selected browser profile and origin determine which record you see, so changing the hostname or port can lead to a fresh profile state for the game. Use a private browsing window or separate browser profile if you need a clean first launch. Closing the local server process leaves previously saved browser storage in place.
