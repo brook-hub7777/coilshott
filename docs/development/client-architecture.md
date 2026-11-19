@@ -65,3 +65,7 @@ The engine begins in `menu` and moves through `playing` or `paused` during a mis
 ## Pause and return to the lobby
 
 During play, `P` or Escape requests a pause. The pause panel says The Lift Can Wait and offers Resume Mission and Return to the Yard. The engine also pauses active play when the document becomes hidden or pointer lock is lost after capture. Record whether the window was focused and whether pointer lock was active when diagnosing an unexpected pause.
+
+## Browser state inspection getters
+
+Read `window.__NIMBUS_STATE__` in the console to see engine telemetry such as position, phase, health, ammo, subclass, and weapon. `window.__REVISION_STATE__` returns a JSON copy of the HUD state held by React. Read each property again when checking a transition. The getter returns a snapshot, so retaining the previous object is useful for comparing values across a UI action.
