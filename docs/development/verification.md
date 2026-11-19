@@ -61,3 +61,7 @@ On Play, wait for the `LAUNCH MISSION` button and activate it with a real browse
 ## Account for pointer-lock behavior during pause
 
 After mission launch, check whether `Return to the Yard` is already visible. The test browser may enter pause when it cannot retain pointer lock. If the mission is active, press `p` and wait for that control to appear. This confirms access to the pause menu. Use a headed browser with working pointer lock if the task also needs to verify mouse capture and resumption.
+
+## Exercise the lobby at a narrow width
+
+Create a separate browser context at 390 CSS pixels wide, the mobile size mentioned in the analysis archive. Open the lobby and check that the primary action is visible and reachable. Inspect any clipped controls and unintended horizontal scrolling. Record whether touch emulation was enabled, since a narrow desktop viewport and a touch-capable context exercise different parts of the experience.
