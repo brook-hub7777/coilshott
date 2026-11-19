@@ -29,3 +29,7 @@ The browser tab gets its icon from the standalone `/favicon.svg` referenced in `
 ## Find the active CSS declaration
 
 The design notes under `coilshot/analysis/design-system.md` provide a vocabulary for surfaces, type, and motion. Use the computed style of the running page to establish the actual declaration behind a color or spacing issue. Expand the computed property to find its source rule in `assets/index-Cunqe2o7.css`, then check specificity, media conditions, and inherited custom properties. Record the matching selector in any proposed change.
+
+## Identify viewport and input media rules
+
+The shipped stylesheet contains layout rules for widths up to 700 pixels and for 701–1000 pixels, along with separate height and coarse-pointer queries. When a layout issue appears on a phone or tablet, capture the viewport dimensions and pointer type. Toggle touch emulation independently of width to find which rule applies. Landscape and portrait at the same width can produce different results because the stylesheet also checks height.
