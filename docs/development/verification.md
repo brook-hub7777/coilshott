@@ -17,3 +17,7 @@ Take the stylesheet and module URLs from the HTML that the server actually retur
 ## Confirm a missing file is reported
 
 Ask the included Node server for a distinct file name that is absent from the checkout, such as `/assets/smoke-check-missing.js`. Its missing-file branch should return HTTP 404 and a plain-text body. This gives you a control when diagnosing a broken module URL in the browser. Capture the status using an HTTP client before applying this expectation to any other server, since the rule comes from `coilshot/server.js`.
+
+## Match response bytes to the selected copy
+
+Fetch the same path from both local server modes and compare the responses with the intended files. For example, compare `/art/sky-yard.png` with the tracked image from each server's document root. Use `cmp` or compute file digests on both files. This check can expose a stale copy when both servers return HTTP 200. Compare the assets affected by an edit before drawing a browser-level conclusion.
