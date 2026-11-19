@@ -49,3 +49,7 @@ The Graphics quality setting changes the renderer's pixel-ratio cap and shadow b
 ## Trace canvas resizing and camera projection
 
 The client uses a `ResizeObserver` and reads the canvas element's client width and height. Its resize handler updates the renderer, postprocessing composer, and camera aspect, then refreshes the projection matrix. For a stretched or clipped scene, inspect both the element rectangle and its drawing-buffer dimensions after a resize. Record whether the menu chrome, the 3D scene, or both change when the viewport is resized.
+
+## Locate textures generated in the browser
+
+Some scene textures originate in JavaScript. The shipped module creates a 256 × 256 canvas, writes pixel data into it, and also uses smaller canvases and gradients for generated effects. For a texture problem, first identify whether the object belongs to the static lobby artwork or the 3D scene. A generated texture has no standalone PNG request, so confirm its creation through the browser call stack or scene initialization output.
