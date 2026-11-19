@@ -49,3 +49,7 @@ In the shipped bundle the main navigation has a button with accessible name `des
 ## Exercise the Settings overlay
 
 Click the button named `Open settings` and assert that the `MAKE IT YOURS.` heading appears. For a slightly broader check, also wait for the `Master volume` slider and the `Graphics quality` combobox. Click `DONE` and confirm the Settings heading is hidden. This covers the dialog's entry point, visible content and dismissal using accessible names confirmed in the shipped interface.
+
+## Open the controls reference from the lobby
+
+From the lobby, activate the footer button whose accessible name contains `CONTROLS` and wait for `KNOW YOUR LIFT.`. Verify that the panel shows the control reference, then dismiss it with `READY, ENGINEER` and check that the lobby is visible again. This is a short independent check for the footer help flow, and it can run before requesting browser pointer lock.
