@@ -5,3 +5,4 @@ This guide documents the checked-in browser build and how to inspect, run, verif
 - [Repository and local workflow](local-workflow.md)
 - [Browser client and state](client-architecture.md)
 - [Graphics, assets, and audio](graphics-and-audio.md)
+- [Verification and debugging](verification.md)
