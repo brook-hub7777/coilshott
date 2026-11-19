@@ -73,3 +73,7 @@ Capture the same view with a fixed viewport, browser version, graphics mode and 
 ## Preserve evidence around a browser failure
 
 For a failing Playwright run, retain a trace, the browser error list and a screenshot near the failure. In the trace, inspect the action immediately before the failed expectation and confirm that the intended control received the click or key press. Use a temporary output directory so investigating a failure does not add traces or screenshots to the checkout.
+
+## Test persistence with one visible setting
+
+In a disposable browser context, change a visible setting such as Master volume and record the new value. Close Settings, reload the same local page, reopen Settings and compare the displayed value. Keep the origin and browser context the same for both loads. This exercises the real save and restore path through the UI without depending on the format of the stored data.
