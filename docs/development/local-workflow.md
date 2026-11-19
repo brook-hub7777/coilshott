@@ -73,3 +73,7 @@ From the repository root, run `python3 -m http.server --bind 127.0.0.1 --directo
 ## Identify how served files are labeled
 
 The helper maps extensions to content types, including `text/html` for HTML, `text/javascript` for JavaScript, `text/css` for stylesheets, and `font/ttf` for TrueType fonts. Unknown extensions use `application/octet-stream`. Successful responses also include `Cache-Control: no-cache` and `Access-Control-Allow-Origin: *`. These headers come from the local helper. Inspect the response for a specific file with `curl -sS -D - -o /dev/null` followed by its local URL.
+
+## Manage the foreground server
+
+Stop the foreground server with Ctrl+C in its terminal, then run the start command again to restart it. Repeat the `PORT` assignment if you chose a custom port. Each request opens its asset file from disk, so a file edit can be read on the next request. The server script itself is loaded when Node starts. Restart the process after changing the server code, and reload the page to request the current assets.
