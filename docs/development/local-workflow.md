@@ -29,3 +29,7 @@ The analysis folder includes `implementation-plan.md`, which proposes a source s
 ## Follow startup through the HTML
 
 Open `index.html` to find the page title, icon link, Orbitron face declaration, and root mount element. The stylesheet is `/assets/index-Cunqe2o7.css`. The module element loads `/assets/index-CFnmQ0aO.js` after the document declares `#root`. This short entry document gives you concrete starting points when a browser can reach the server and the expected interface has yet to appear. The nested and archived HTML copies have the same bootstrap at the baseline.
+
+## Follow the shipped JavaScript files
+
+The application bundle `assets/index-CFnmQ0aO.js` imports `./three-CoWDQTm9.js` relative to its own location. Both filenames are part of the delivered module graph. Keep the HTML module reference and the relative import in mind when checking the asset directory. For example, moving the entry bundle to a different directory changes where the browser resolves its rendering dependency. These tracked files contain generated, compressed browser code.
