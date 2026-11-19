@@ -41,3 +41,7 @@ The stylesheet resolves image and font URLs relative to its own path. For exampl
 ## Check which local copies match
 
 The baseline root and archived web payloads have matching content for counterpart files, and all three checked-in `index.html` files are identical. Run `cmp index.html coilshot/analysis/reference-assets/index.html` to verify the entry pages and use `cmp` on a specific bundle when tracking a change. Identical bytes describe the baseline only. The two trees are separate paths, so a later edit to one tree can change which content a serving workflow picks up.
+
+## Verify Node.js before starting the helper
+
+Run `node --version` from the checkout to confirm that Node.js is on your path. Cloud onboarding validated the launcher with Node.js v24.22.1. The repository supplies no Node version pin, so this version records the tested environment. The helper uses the built-in `http`, `fs`, and `path` modules. A Node installation that runs the helper provides the server-side runtime needed to serve the tracked web assets.
