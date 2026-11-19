@@ -17,3 +17,7 @@ The root React component keeps lobby screen, selected mission, active overlay, p
 ## Lobby navigation
 
 The lobby has four views named Play, Destinations, Engineer, and Collections. Click a view and look for the corresponding `screen-play`, `screen-destinations`, `screen-engineer`, or `screen-collections` class on `.menu-shell`. View changes leave the URL intact because the selected screen lives in React state. The wordmark has the accessible name `Nimbus Salvagers home` and returns the lobby to Play.
+
+## Navigation and selection attributes
+
+In DevTools Accessibility, find the landmark named Main navigation and inspect the buttons inside it. The shipped buttons have lowercase accessible names, and the active button receives `aria-current="page"`. Activity cards and Engineer selection buttons use `aria-pressed` for their selected state. These attributes expose the current UI choice even when styling, letter case, or decorative icons make the visual selection harder to identify.
