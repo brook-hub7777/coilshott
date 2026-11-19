@@ -49,3 +49,7 @@ Settings, Field Guide, Mission Briefing, and collection details share the native
 ## Field Guide entry points
 
 The lobby footer offers a Controls button. The question mark shortcut also opens the Field Guide while the engine is in the menu phase with no modal open. During a paused mission, use the Controls & Field Guide button on the pause panel. All of these paths lead to the same Know Your Lift dialog, which includes keyboard bindings and fallback instructions for mouse capture and touch.
+
+## Settings controls and persistence
+
+Open Settings using the top-bar gear or the Settings button in the pause panel. Look Sensitivity ranges from 0.25 to 2.50 in 0.05 increments, and Graphics Quality offers High and Performance. Reduce Motion and Invert Vertical Look use checkboxes. Changing a control updates the profile immediately. The Done button closes the panel, so inspect the live state while the dialog is still open if a change appears delayed.
