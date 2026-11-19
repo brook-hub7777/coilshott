@@ -73,3 +73,7 @@ The bundled sound engine attempts to resume its audio context when that context 
 ## Trace game volume to the master gain
 
 The default volume in the shipped bundle is 0.35. `setVolume` updates the master gain through `setTargetAtTime`, so changes ramp instead of jumping immediately. For a volume issue, compare the Settings slider, the Sound control, and the browser tab mute state. After any change, wait for the gain to settle and trigger the same interaction again before comparing loudness.
+
+## Locate synthesized transient sounds
+
+The sound engine creates short tones with oscillators and constructs short noise samples in audio buffers. Its noise path creates a low-pass filter and uses a gain envelope. The tracked site contains no separate audio recordings for these sounds. When a single cue is missing, reproduce the event that should generate it and inspect whether it reaches its audio helper before looking for a missing asset.
