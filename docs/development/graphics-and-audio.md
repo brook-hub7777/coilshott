@@ -57,3 +57,7 @@ Some scene textures originate in JavaScript. The shipped module creates a 256 ×
 ## Trace activity thumbnails to canvas captures
 
 The client generates activity previews by moving the existing camera to preset positions, rendering frames, and capturing JPEG data URLs with `canvas.toDataURL`. It saves and restores the camera position and orientation during the process. Inspect a missing thumbnail's image source and the surrounding console output. An image beginning with `data:image/jpeg` is already embedded in the page and has no separate file to locate in `art/`.
+
+## Profile slow frames by browser and scene
+
+Use the Performance panel to record a short interval in the lobby and a second interval after entering a mission. The bundle can schedule frames differently on detected software rendering, so record the renderer type, dimensions, and graphics preset with both captures. Inspect long scripting tasks and rendering work separately. A trace with clean initial requests can still reveal expensive repeated work after the page has finished loading.
