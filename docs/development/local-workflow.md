@@ -45,3 +45,7 @@ The baseline root and archived web payloads have matching content for counterpar
 ## Verify Node.js before starting the helper
 
 Run `node --version` from the checkout to confirm that Node.js is on your path. Cloud onboarding validated the launcher with Node.js v24.22.1. The repository supplies no Node version pin, so this version records the tested environment. The helper uses the built-in `http`, `fs`, and `path` modules. A Node installation that runs the helper provides the server-side runtime needed to serve the tracked web assets.
+
+## Use the prebuilt application directly
+
+The checkout ships browser-ready HTML, JavaScript, CSS, fonts, and artwork. It includes no package manifest, package-manager lockfile, or build task. Once Node.js and a browser are available, begin with the checked-in helper. There are no declared packages to install and no compiled output to generate during onboarding. Keep the distinction between bundled dependencies and local tools in mind when you inspect the project or reproduce the launch on another machine.
