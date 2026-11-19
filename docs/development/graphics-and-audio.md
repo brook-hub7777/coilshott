@@ -61,3 +61,7 @@ The client generates activity previews by moving the existing camera to preset p
 ## Profile slow frames by browser and scene
 
 Use the Performance panel to record a short interval in the lobby and a second interval after entering a mission. The bundle can schedule frames differently on detected software rendering, so record the renderer type, dimensions, and graphics preset with both captures. Inspect long scripting tasks and rendering work separately. A trace with clean initial requests can still reveal expensive repeated work after the page has finished loading.
+
+## Trace the Web Audio signal path
+
+The shipped module constructs an `AudioContext` and connects a master `GainNode` to the destination. Sound generation routes through that shared master. Begin a silent-audio investigation with an explicit click in the lobby and inspect the audio context state or browser media diagnostics. If all generated sounds are quiet, inspect the shared gain and tab output before tracing each individual sound.
