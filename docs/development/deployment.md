@@ -61,3 +61,7 @@ Play, Destinations, Engineer, and Collections are views reached through the runn
 ## Fresh sessions and cached responses
 
 If a release behaves differently in existing and fresh sessions, compare the HTML response and the asset URLs that each session requested. In Chromium, open the Network panel and temporarily disable the browser cache while it is open. Compare the same deployment URL when reproducing the issue. Keep the response URL and headers with the report so a later check can identify the asset version.
+
+## Production URL and redirects
+
+The README links to `https://coilshott.vercel.app/`. During release verification, follow redirects and note the final URL and status. If the deployment URL works and the public domain does not, check the domain assignment and deployment protection in Vercel. If both URLs return the app shell, continue with the asset and browser checks against the public URL shared with players.
