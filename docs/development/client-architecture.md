@@ -33,3 +33,7 @@ On Play, select a mission and open View Mission Details. The briefing reads the 
 ## Engineer subclass selection
 
 The Engineer view offers Rigger, Aerostat, and Mistwright. The selected subclass drives the description, Mobility, Resilience, Recovery, and ability details in the panel. Clicking a subclass updates the profile and calls the engine’s subclass setter. To follow that change, begin at the selected button, inspect `aria-pressed`, and watch the profile’s `engineer` field and the engine snapshot update.
+
+## Weapon names and IDs
+
+The loadout presents Coil Nine, Rainbell, and Longdraft as names players can recognize. Their internal weapon IDs are `auto`, `handcannon`, and `scout`. Engineer writes the selected weapon ID to the player profile and applies it to the engine. The Collections schematics use their own IDs such as `coil-nine`. When comparing loadout and collection data, use this mapping to relate the two sets of identifiers.
