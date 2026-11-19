@@ -33,3 +33,7 @@ Open `index.html` to find the page title, icon link, Orbitron face declaration, 
 ## Follow the shipped JavaScript files
 
 The application bundle `assets/index-CFnmQ0aO.js` imports `./three-CoWDQTm9.js` relative to its own location. Both filenames are part of the delivered module graph. Keep the HTML module reference and the relative import in mind when checking the asset directory. For example, moving the entry bundle to a different directory changes where the browser resolves its rendering dependency. These tracked files contain generated, compressed browser code.
+
+## Find the files that supply the page appearance
+
+The stylesheet resolves image and font URLs relative to its own path. For example, `../art/sky-yard.png` resolves to `/art/sky-yard.png` when the stylesheet is served from `/assets/`. The HTML also declares the display font directly and loads `/favicon.svg`. These files are part of the committed static payload. If the shell appears with an unexpected typeface or background, use the browser Network panel to check the resolved resource URLs.
