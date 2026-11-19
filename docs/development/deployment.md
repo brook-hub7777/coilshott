@@ -65,3 +65,7 @@ If a release behaves differently in existing and fresh sessions, compare the HTM
 ## Production URL and redirects
 
 The README links to `https://coilshott.vercel.app/`. During release verification, follow redirects and note the final URL and status. If the deployment URL works and the public domain does not, check the domain assignment and deployment protection in Vercel. If both URLs return the app shell, continue with the asset and browser checks against the public URL shared with players.
+
+## Rollback checks
+
+Record the last known good Vercel deployment and its Git commit while preparing a release. If a new release breaks startup, use the project’s supported rollback or deployment promotion flow with the appropriate access. Recheck the public alias, homepage, asset responses, and lobby after the change. Record the broken revision separately so a follow-up fix can be tested in a preview.
