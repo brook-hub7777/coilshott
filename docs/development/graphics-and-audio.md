@@ -69,3 +69,7 @@ The shipped module constructs an `AudioContext` and connects a master `GainNode`
 ## Document audio activation by user gesture
 
 The bundled sound engine attempts to resume its audio context when that context is suspended. Lobby interactions, mission launch, and mission resume call into audio startup. A fresh page can load the 3D scene before it has an allowed audio gesture. Reproduce sound reports from a new tab and record the first interaction that triggered sound, along with any browser autoplay warnings.
+
+## Trace game volume to the master gain
+
+The default volume in the shipped bundle is 0.35. `setVolume` updates the master gain through `setTargetAtTime`, so changes ramp instead of jumping immediately. For a volume issue, compare the Settings slider, the Sound control, and the browser tab mute state. After any change, wait for the gain to settle and trigger the same interaction again before comparing loudness.
