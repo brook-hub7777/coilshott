@@ -21,3 +21,7 @@ The lobby has four views named Play, Destinations, Engineer, and Collections. Cl
 ## Navigation and selection attributes
 
 In DevTools Accessibility, find the landmark named Main navigation and inspect the buttons inside it. The shipped buttons have lowercase accessible names, and the active button receives `aria-current="page"`. Activity cards and Engineer selection buttons use `aria-pressed` for their selected state. These attributes expose the current UI choice even when styling, letter case, or decorative icons make the visual selection harder to identify.
+
+## Shared mission selection
+
+Play activity cards and Destinations rows update the same mission selection. Choose Through the Squall in Play, check the tracked mission title, then open Destinations and find the selected Vanguard row. The three mission IDs are `story`, `strike`, and `windtrials`, with `story` selected when the application loads. The Destinations launch button incorporates the selected activity label, so its text updates with the selection.
