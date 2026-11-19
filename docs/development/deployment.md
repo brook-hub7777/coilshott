@@ -37,3 +37,7 @@ Confirm the configured production branch in the Vercel project before treating a
 ## Release diff
 
 Review the intended release diff before it reaches production. Look first at `index.html`, `vercel.json`, and changes or deletions under `assets`, `fonts`, and `art`. For an asset replacement, check both the file and its references. A documentation change can leave every served byte of the game unchanged. State that scope in the review so validation is proportional to the files touched.
+
+## Homepage verification
+
+Request `https://coilshott.vercel.app/` with an HTTP client and look for a successful response containing the `Nimbus Salvagers` title. Repeat the check on the Vercel deployment URL when debugging a domain or alias issue. If the client reports that a local proxy refused the connection, repeat from a network that can reach the domain before diagnosing a Vercel outage.
