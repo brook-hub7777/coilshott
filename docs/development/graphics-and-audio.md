@@ -65,3 +65,7 @@ Use the Performance panel to record a short interval in the lobby and a second i
 ## Trace the Web Audio signal path
 
 The shipped module constructs an `AudioContext` and connects a master `GainNode` to the destination. Sound generation routes through that shared master. Begin a silent-audio investigation with an explicit click in the lobby and inspect the audio context state or browser media diagnostics. If all generated sounds are quiet, inspect the shared gain and tab output before tracing each individual sound.
+
+## Document audio activation by user gesture
+
+The bundled sound engine attempts to resume its audio context when that context is suspended. Lobby interactions, mission launch, and mission resume call into audio startup. A fresh page can load the 3D scene before it has an allowed audio gesture. Reproduce sound reports from a new tab and record the first interaction that triggered sound, along with any browser autoplay warnings.
