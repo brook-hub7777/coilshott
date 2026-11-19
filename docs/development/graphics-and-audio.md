@@ -33,3 +33,7 @@ The design notes under `coilshot/analysis/design-system.md` provide a vocabulary
 ## Identify viewport and input media rules
 
 The shipped stylesheet contains layout rules for widths up to 700 pixels and for 701–1000 pixels, along with separate height and coarse-pointer queries. When a layout issue appears on a phone or tablet, capture the viewport dimensions and pointer type. Toggle touch emulation independently of width to find which rule applies. Landscape and portrait at the same width can produce different results because the stylesheet also checks height.
+
+## Explain both reduced-motion controls
+
+The stylesheet has a `prefers-reduced-motion` media rule. The in-game Reduce motion setting is also read by the bundled scene update, menu camera, walking motion, and visual item movement. Test the browser media preference and the in-game switch individually when an animation persists. Record whether the visible motion comes from CSS on an element or from frames drawn to the canvas.
