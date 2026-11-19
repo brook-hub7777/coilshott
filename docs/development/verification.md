@@ -69,3 +69,7 @@ Create a separate browser context at 390 CSS pixels wide, the mobile size mentio
 ## Capture screenshots at a stable state
 
 Capture the same view with a fixed viewport, browser version, graphics mode and starting settings. Wait for `document.fonts.ready` and the relevant visible heading before taking a screenshot. The canvas can vary from frame to frame, so check stable menu layout and control placement separately from the animated scene. Keep new captures outside tracked paths unless a change explicitly calls for updating a baseline.
+
+## Preserve evidence around a browser failure
+
+For a failing Playwright run, retain a trace, the browser error list and a screenshot near the failure. In the trace, inspect the action immediately before the failed expectation and confirm that the intended control received the click or key press. Use a temporary output directory so investigating a failure does not add traces or screenshots to the checkout.
