@@ -21,3 +21,7 @@ Ask the included Node server for a distinct file name that is absent from the ch
 ## Match response bytes to the selected copy
 
 Fetch the same path from both local server modes and compare the responses with the intended files. For example, compare `/art/sky-yard.png` with the tracked image from each server's document root. Use `cmp` or compute file digests on both files. This check can expose a stale copy when both servers return HTTP 200. Compare the assets affected by an edit before drawing a browser-level conclusion.
+
+## Listen for failures before opening the page
+
+Attach Playwright listeners for `pageerror`, `requestfailed` and `response` before calling `page.goto`. Keep the error message, failed URL and any HTTP response status of 400 or above in the run output. A transport-level failure appears through `requestfailed`, while a completed 404 response arrives through `response`. On a failing smoke run, check the earliest relevant failure before changing a selector.
