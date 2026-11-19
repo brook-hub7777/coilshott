@@ -29,3 +29,7 @@ Attach Playwright listeners for `pageerror`, `requestfailed` and `response` befo
 ## Wait for an observable ready state
 
 After navigating to `/`, use a browser assertion that retries until the heading `RIDE THE UPDRAFT.` becomes visible. Then wait for the canvas and the navigation controls that the next action needs. An HTML response or a page load event confirms an earlier stage of startup. Capture the visible page and the current URL if the interface assertion times out.
+
+## Configure a headless WebGL test browser
+
+The local smoke run used system Chromium with `--use-gl=angle`, `--use-angle=swiftshader` and `--enable-unsafe-swiftshader`. Keep those flags scoped to the disposable local test browser used to run this project. Record the Chromium version with the result because the available graphics backend varies with the host. Use a regular hardware-accelerated browser for checks that depend on normal graphics performance.
