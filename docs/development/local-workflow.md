@@ -9,3 +9,7 @@ This walkthrough documents the Nimbus Salvagers checkout as it exists today. The
 ## Identify the checkout and the application
 
 The GitHub repository is `brook-hub7777/coilshott`. Its nested tooling directory is spelled `coilshot` with one final t. Nimbus Salvagers is the title shown in the HTML and the name used by the README. In the cloud checkout, `/workspace/coilshott` is the repository root. Run `git rev-parse --show-toplevel` if you entered through a different folder, then resolve all repository-relative paths in this guide from that root.
+
+## Find the commits that established the layout
+
+Use `git show --stat 8db9a0a` to locate the upload that added the server, nested HTML, and analysis directory. Use `git show --stat 7eb7ada` to see the later addition of the root HTML, static assets, and Vercel configuration. The earlier layout remains visible alongside those additions. The root README gained its live-site pointer in `1bfcd40`. These commits provide a traceable explanation for the two sets of files.
