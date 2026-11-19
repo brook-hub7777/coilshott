@@ -21,3 +21,7 @@ The checked-in `vercel.json` contains a rewrite from `/(.*)` to `/index.html`. A
 ## Asset paths in a deployment
 
 The deployment entrypoint uses root-relative URLs for the module, stylesheet, favicon, and display font. Changing the Vercel root or introducing a URL prefix affects those requests. Review HTML and nested asset references when a release changes the directory layout. In a preview, start at the intended public entrypoint and check the browser Network panel for requested paths that differ from the deployed file paths.
+
+## Hashed filenames
+
+The entrypoint currently names `assets/index-CFnmQ0aO.js` and `assets/index-Cunqe2o7.css`. The JavaScript loads `three-CoWDQTm9.js` from the same assets directory. If a future source build changes these names, review the generated HTML and the matching bundles in one change. A preview should load the module graph in a fresh browser session to catch stale references while the previous deployment is still available.
