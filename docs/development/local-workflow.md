@@ -69,3 +69,7 @@ The helper constructs its first serving directory from `__dirname` and `analysis
 ## Serve the deployment files locally
 
 From the repository root, run `python3 -m http.server --bind 127.0.0.1 --directory . 3001` when you need to check edits to the top-level deployment files. Open `http://127.0.0.1:3001/` and check that the HTML and its assets come from the checkout root. This serves the same entrypoint and assets listed for deployment. Use a Vercel preview to check Vercel-managed routing.
+
+## Identify how served files are labeled
+
+The helper maps extensions to content types, including `text/html` for HTML, `text/javascript` for JavaScript, `text/css` for stylesheets, and `font/ttf` for TrueType fonts. Unknown extensions use `application/octet-stream`. Successful responses also include `Cache-Control: no-cache` and `Access-Control-Allow-Origin: *`. These headers come from the local helper. Inspect the response for a specific file with `curl -sS -D - -o /dev/null` followed by its local URL.
