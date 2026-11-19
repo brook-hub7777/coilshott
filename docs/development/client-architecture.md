@@ -29,3 +29,7 @@ Play activity cards and Destinations rows update the same mission selection. Cho
 ## Mission briefing data
 
 On Play, select a mission and open View Mission Details. The briefing reads the selected mission definition to show the title, synopsis, location, duration, team, and objective. It also looks up a collection item by the mission reward ID to display the reward name. When tracing a briefing whose objective or reward looks wrong, compare the mission and collection records before investigating the dialog layout.
+
+## Engineer subclass selection
+
+The Engineer view offers Rigger, Aerostat, and Mistwright. The selected subclass drives the description, Mobility, Resilience, Recovery, and ability details in the panel. Clicking a subclass updates the profile and calls the engine’s subclass setter. To follow that change, begin at the selected button, inspect `aria-pressed`, and watch the profile’s `engineer` field and the engine snapshot update.
