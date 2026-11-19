@@ -49,3 +49,7 @@ Inspect the document and one request for each asset type in the deployed browser
 ## Homepage 404 triage
 
 For a production homepage 404, start with the URL and the deployment status in Vercel. Confirm which revision and Root Directory the deployment used. Inspect that revision for the deployed `index.html` and confirm the production alias points to it. Capture the first failing response before changing the rewrite or publishing another revision, since the original response helps distinguish the source of the failure.
+
+## Bundle load errors
+
+When the production HTML appears and the lobby fails to render, capture the first red request and the first browser exception. If the request path names a module, compare it with the checked-in files for the deployed commit and inspect its response body and content type. This helps determine whether the deployment omitted an asset, served fallback HTML, or reached code that failed during browser initialization.
