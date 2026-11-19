@@ -13,3 +13,7 @@ The GitHub repository is `brook-hub7777/coilshott`. Its nested tooling directory
 ## Find the commits that established the layout
 
 Use `git show --stat 8db9a0a` to locate the upload that added the server, nested HTML, and analysis directory. Use `git show --stat 7eb7ada` to see the later addition of the root HTML, static assets, and Vercel configuration. The earlier layout remains visible alongside those additions. The root README gained its live-site pointer in `1bfcd40`. These commits provide a traceable explanation for the two sets of files.
+
+## Locate the root web payload
+
+The root web payload starts at `index.html`. The three tracked files under `assets/` supply the application module, rendering module, and stylesheet. The `art/` directory holds the sky-yard image, `fonts/` holds local typefaces, and `favicon.svg` supplies the browser icon. Keep these paths together when inspecting the root page. The HTML points to its assets with paths that start at the web server root.
