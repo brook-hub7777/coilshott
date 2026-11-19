@@ -37,3 +37,7 @@ The shipped stylesheet contains layout rules for widths up to 700 pixels and for
 ## Explain both reduced-motion controls
 
 The stylesheet has a `prefers-reduced-motion` media rule. The in-game Reduce motion setting is also read by the bundled scene update, menu camera, walking motion, and visual item movement. Test the browser media preference and the in-game switch individually when an animation persists. Record whether the visible motion comes from CSS on an element or from frames drawn to the canvas.
+
+## Diagnose WebGL startup failures
+
+The client displays the heading `A MOMENT BETWEEN WORLDS.` when its 3D initialization fails. The recovery button reloads the page. Capture the message and browser console output before retrying. In a separate console evaluation, check whether a fresh canvas can obtain a `webgl2` context. Compare a working browser profile with the failing one and record the browser version and graphics acceleration state.
