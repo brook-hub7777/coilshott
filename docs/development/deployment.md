@@ -57,3 +57,7 @@ When the production HTML appears and the lobby fails to render, capture the firs
 ## Deployed paths and in-app navigation
 
 Play, Destinations, Engineer, and Collections are views reached through the running lobby. The current browser navigation keeps those views at the same document URL. A rewrite that serves the HTML for an arbitrary path does not create a dedicated link to a particular view. Verify internal navigation by clicking it in the app and test paths separately when changing Vercel routing.
+
+## Fresh sessions and cached responses
+
+If a release behaves differently in existing and fresh sessions, compare the HTML response and the asset URLs that each session requested. In Chromium, open the Network panel and temporarily disable the browser cache while it is open. Compare the same deployment URL when reproducing the issue. Keep the response URL and headers with the report so a later check can identify the asset version.
