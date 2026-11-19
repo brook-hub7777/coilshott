@@ -53,3 +53,7 @@ Click the button named `Open settings` and assert that the `MAKE IT YOURS.` head
 ## Open the controls reference from the lobby
 
 From the lobby, activate the footer button whose accessible name contains `CONTROLS` and wait for `KNOW YOUR LIFT.`. Verify that the panel shows the control reference, then dismiss it with `READY, ENGINEER` and check that the lobby is visible again. This is a short independent check for the footer help flow, and it can run before requesting browser pointer lock.
+
+## Observe the transition into a mission
+
+On Play, wait for the `LAUNCH MISSION` button and activate it with a real browser click. Assert that `RIDE THE UPDRAFT.` disappears and look for the in-mission HUD or pause controls. The initial gesture matters to browser input and audio policies. Record which in-mission view appeared so automation can account for pointer-lock behavior on the particular browser and host.
