@@ -17,3 +17,7 @@ The repository stores the files Vercel needs for a static deployment and contain
 ## Routing configuration
 
 The checked-in `vercel.json` contains a rewrite from `/(.*)` to `/index.html`. A rewrite serves content under the requested address. To check its effect, request the homepage, a real JavaScript asset, and a path without a corresponding file in a preview. Record the status and content type for each request. This shows which responses are the app shell and which carry actual assets under the deployed routing rules.
+
+## Asset paths in a deployment
+
+The deployment entrypoint uses root-relative URLs for the module, stylesheet, favicon, and display font. Changing the Vercel root or introducing a URL prefix affects those requests. Review HTML and nested asset references when a release changes the directory layout. In a preview, start at the intended public entrypoint and check the browser Network panel for requested paths that differ from the deployed file paths.
