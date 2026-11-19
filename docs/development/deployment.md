@@ -69,3 +69,7 @@ The README links to `https://coilshott.vercel.app/`. During release verification
 ## Rollback checks
 
 Record the last known good Vercel deployment and its Git commit while preparing a release. If a new release breaks startup, use the project’s supported rollback or deployment promotion flow with the appropriate access. Recheck the public alias, homepage, asset responses, and lobby after the change. Record the broken revision separately so a follow-up fix can be tested in a preview.
+
+## Release verification record
+
+A release note should record the Git revision, the preview or production URL checked, whether the homepage and assets loaded, and the browser behavior observed. Include the browser and whether WebGL used hardware or software rendering when reporting a startup issue. Keep local smoke checks and deployed checks separate so another person can reproduce the exact request or browser flow.
