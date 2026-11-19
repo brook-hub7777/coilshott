@@ -77,3 +77,7 @@ The player profile lives in local storage under `nimbus-engineer-v1`. In Chromiu
 ## Profile parsing and recovery
 
 On load, the bundle parses the saved profile and falls back to its defaults if reading or parsing throws. It validates subclass and weapon choices, bounds numeric values, and preserves the starter unlocks when merging stored items. Use a disposable browser profile to observe initialization from a fresh store. Its initial values include the Rigger subclass, Coil Nine loadout, and the Coil Nine and Pathfinder Set discoveries.
+
+## Mission results and career progress
+
+The engine passes score, kills, spool tokens, and victory status to the profile update on mission completion. The update accumulates totals and keeps the largest mission score. A victory also adds the reward item and records the completed activity mode. Completing all three modes adds Cloudwright. When tracing progress after a run, compare the result summary, Collections career counters, and the persisted profile.
