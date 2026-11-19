@@ -25,3 +25,7 @@ Fetch the same path from both local server modes and compare the responses with 
 ## Listen for failures before opening the page
 
 Attach Playwright listeners for `pageerror`, `requestfailed` and `response` before calling `page.goto`. Keep the error message, failed URL and any HTTP response status of 400 or above in the run output. A transport-level failure appears through `requestfailed`, while a completed 404 response arrives through `response`. On a failing smoke run, check the earliest relevant failure before changing a selector.
+
+## Wait for an observable ready state
+
+After navigating to `/`, use a browser assertion that retries until the heading `RIDE THE UPDRAFT.` becomes visible. Then wait for the canvas and the navigation controls that the next action needs. An HTML response or a page load event confirms an earlier stage of startup. Capture the visible page and the current URL if the interface assertion times out.
