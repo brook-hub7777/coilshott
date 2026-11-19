@@ -77,3 +77,7 @@ For a failing Playwright run, retain a trace, the browser error list and a scree
 ## Test persistence with one visible setting
 
 In a disposable browser context, change a visible setting such as Master volume and record the new value. Close Settings, reload the same local page, reopen Settings and compare the displayed value. Keep the origin and browser context the same for both loads. This exercises the real save and restore path through the UI without depending on the format of the stored data.
+
+## Write a reproducible verification summary
+
+Record the result for each server and each workflow you exercised. The onboarding browser smoke covered the lobby, Destinations, Settings, mission launch and pause in Chromium for both the included Node server and a server rooted at the checkout. When repeating it, include the tested revision and note which additional scenarios were run, such as mobile layout, persistence or headed pointer lock.
