@@ -57,3 +57,7 @@ From the lobby, activate the footer button whose accessible name contains `CONTR
 ## Observe the transition into a mission
 
 On Play, wait for the `LAUNCH MISSION` button and activate it with a real browser click. Assert that `RIDE THE UPDRAFT.` disappears and look for the in-mission HUD or pause controls. The initial gesture matters to browser input and audio policies. Record which in-mission view appeared so automation can account for pointer-lock behavior on the particular browser and host.
+
+## Account for pointer-lock behavior during pause
+
+After mission launch, check whether `Return to the Yard` is already visible. The test browser may enter pause when it cannot retain pointer lock. If the mission is active, press `p` and wait for that control to appear. This confirms access to the pause menu. Use a headed browser with working pointer lock if the task also needs to verify mouse capture and resumption.
