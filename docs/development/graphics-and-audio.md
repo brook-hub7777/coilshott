@@ -53,3 +53,7 @@ The client uses a `ResizeObserver` and reads the canvas element's client width a
 ## Locate textures generated in the browser
 
 Some scene textures originate in JavaScript. The shipped module creates a 256 × 256 canvas, writes pixel data into it, and also uses smaller canvases and gradients for generated effects. For a texture problem, first identify whether the object belongs to the static lobby artwork or the 3D scene. A generated texture has no standalone PNG request, so confirm its creation through the browser call stack or scene initialization output.
+
+## Trace activity thumbnails to canvas captures
+
+The client generates activity previews by moving the existing camera to preset positions, rendering frames, and capturing JPEG data URLs with `canvas.toDataURL`. It saves and restores the camera position and orientation during the process. Inspect a missing thumbnail's image source and the surrounding console output. An image beginning with `data:image/jpeg` is already embedded in the page and has no separate file to locate in `art/`.
