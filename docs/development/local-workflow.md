@@ -17,3 +17,7 @@ Use `git show --stat 8db9a0a` to locate the upload that added the server, nested
 ## Locate the root web payload
 
 The root web payload starts at `index.html`. The three tracked files under `assets/` supply the application module, rendering module, and stylesheet. The `art/` directory holds the sky-yard image, `fonts/` holds local typefaces, and `favicon.svg` supplies the browser icon. Keep these paths together when inspecting the root page. The HTML points to its assets with paths that start at the web server root.
+
+## Find the analysis archive
+
+Open `coilshot/analysis/README.md` for the technical report and its index. Its neighboring inventory files describe the observed application, and `coilshot/analysis/screenshots/` stores the recorded visual evidence. The separate `coilshot/analysis/reference-assets/` tree contains a runnable HTML and asset snapshot. Use that distinction when tracing a file. A screenshot records one observed state, while a matching HTML or bundle path identifies executable content that the local helper can serve.
