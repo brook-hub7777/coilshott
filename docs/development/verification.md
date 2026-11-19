@@ -65,3 +65,7 @@ After mission launch, check whether `Return to the Yard` is already visible. The
 ## Exercise the lobby at a narrow width
 
 Create a separate browser context at 390 CSS pixels wide, the mobile size mentioned in the analysis archive. Open the lobby and check that the primary action is visible and reachable. Inspect any clipped controls and unintended horizontal scrolling. Record whether touch emulation was enabled, since a narrow desktop viewport and a touch-capable context exercise different parts of the experience.
+
+## Capture screenshots at a stable state
+
+Capture the same view with a fixed viewport, browser version, graphics mode and starting settings. Wait for `document.fonts.ready` and the relevant visible heading before taking a screenshot. The canvas can vary from frame to frame, so check stable menu layout and control placement separately from the animated scene. Keep new captures outside tracked paths unless a change explicitly calls for updating a baseline.
