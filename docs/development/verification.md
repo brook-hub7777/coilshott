@@ -41,3 +41,7 @@ Use a new Playwright browser context for each independent scenario. This isolate
 ## Check the visible result of graphics startup
 
 Confirm that the WebGL canvas and the lobby heading are visible together. A canvas element can exist before the renderer is working. If `A MOMENT BETWEEN WORLDS.` appears, save the first browser error and note the active Chromium graphics flags. Keep that failure distinct from a missing asset response so the next check targets the browser capability or the resource that actually failed.
+
+## Use an accessible navigation label
+
+In the shipped bundle the main navigation has a button with accessible name `destinations` in lowercase. Select that role and name, click it, then wait for the `CHOOSE YOUR PATH.` heading. Verify that the Play heading has left the screen. This assertion checks the actual view transition and stays independent of generated CSS class names and visual capitalization.
